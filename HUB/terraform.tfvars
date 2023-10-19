@@ -1,3 +1,4 @@
+
 ##  Input tenancy values ##
 tenancy_ocid = ocid1.tenancy.oc1..aaaaaaaa7m5xck4bqercwcqyjv44iigmut5uhetpvju5wkc6ygvd7mvo2ema
 user_ocid = ocid1.user.oc1..aaaaaaaayzdkth2z53voswdlc6kj53qmuxtsf2c4sn5cnv7vcbxfejx4yt3a
@@ -7,5 +8,4 @@ private_key_path = /home/opc/.oci/Terraform.pem
 region = eu-frankfurt-1
 
 ##################################
-
 
