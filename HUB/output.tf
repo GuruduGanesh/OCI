@@ -9,8 +9,6 @@ output "HUB_Compartment_Name" {
 value = var.compartment_name
 }
 
-/*
-output "HUB_Compartment_ID" {
-value = module.Compartment.id
+output "TAG_Namespace_id" {
+value = module.Compartment.tag_id
 }
-*/

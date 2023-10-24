@@ -20,6 +20,6 @@ module "Network" {
 source = "./Modules/Network"
 hubvcn_cidrs = var.hubvcncidrs
 hubvcn_name = var.hubvcnname
-compartment_id = module.Compartment.id
+compartment_id = module.Compartment.compartment_id
 }
 
