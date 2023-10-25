@@ -21,4 +21,31 @@ variable "hubvcn_name" {
 }
 
 
+################ Security List variables ##############
+variable "Firewall_SL_Port" {
+default = []
+}
+
+
+variable "Mgmt_SL_Port" {
+default = []
+}
+
+variable "Monitor_SL_Port" {
+default = []
+}
+
+variable "LB_SL_Port" {
+default = []
+}
+
+
+
+variable "anywhere" {
+default = "0.0.0.0/0"
+}
+
+variable "oci_range" {
+default = "10.108.0.0/20"
+}
 

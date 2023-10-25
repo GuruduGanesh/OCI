@@ -1,6 +1,4 @@
-
-
-
+/*
 #### Code for Tag Namesapce #####
 
 resource "oci_identity_tag_namespace" "Environment_tag" {
@@ -23,9 +21,6 @@ resource "oci_identity_tag" "Environment" {
     description = "Tag for Environment"
     name = "Environment"
     tag_namespace_id = oci_identity_tag_namespace.Environment_tag.id
-    #Optional
-    #defined_tags = {"Operations.CostCenter"= "42"}
-    #freeform_tags = {"Department"= "Finance"}
     is_cost_tracking = true
     validator {
         #Required
@@ -33,6 +28,11 @@ resource "oci_identity_tag" "Environment" {
         values = ["Root","Hub","Production","DB"]
     }
     is_retired = false
+    depends_on = [
+    oci_identity_tag_namespace.Environment_tag 
+    ]
+
+
 }
 
 
@@ -41,7 +41,10 @@ resource "oci_identity_tag_default" "hub_default" {
     compartment_id = oci_identity_compartment.HUB.compartment_id
     tag_definition_id = oci_identity_tag.Environment.id
     value = "Hub"
-
     #Optional
     is_required = true
+    depends_on = [
+    oci_identity_compartment.HUB
+    ]
 }
+*/
