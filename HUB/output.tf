@@ -18,7 +18,9 @@ value = module.Compartment.tag_id
 */
 
 
-
+/*
 output "HUbCIDR" {
-value = module.Network.hubcidr
+value = cidrsubnets(module.Network.hubcidr)
 }
+
+*/

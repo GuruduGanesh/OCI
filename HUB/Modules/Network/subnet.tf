@@ -1,1 +1,0 @@
-##### Subnet for Hub VCN """"

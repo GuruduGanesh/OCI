@@ -20,7 +20,7 @@ description      = "HUB compartment"
 ##########################
 ######## VCN Variables ##########
 hubvcnname  = "vcn-prd-oci-db-ams"
-hubvcncidrs = ["10.108.0.0/20"]
+hubvcncidrs = ["10.108.0.0/16"]
 #############################
 #####Groups need to create###
 group_list = ["Hub_Admin",
