@@ -15,33 +15,59 @@ variable "region" {}
 ############################################
 
 variable "compartment_name" {
-   # get root compartment id from Root Compartment
-   description = "Define Root NAME"
-   type        = string
+  # get root compartment id from Root Compartment
+  description = "Define Root NAME"
+  type        = string
 }
 
 
 variable "description" {
-   # get root compartment id from Root Compartment
-   description = "HUB COmpartment Description"
-   type        = string
+  # get root compartment id from Root Compartment
+  description = "HUB Compartment Description"
+  type        = string
 }
 
 
 
+variable "group_list" {
+  type = set(string)
+}
 
-
-
-###########################
+variable "user_list" {
+  type = set(string)
+}
+#########################
 ####### Network Module Variable #####
 
 variable "hubvcnname" {
-    description = "VCN NAME"
-    type = string
+  description = "VCN NAME"
+  type        = string
 }
 
 variable "hubvcncidrs" {
-    description = "VCN CIDR"
-    type = list
+  description = "VCN CIDR"
+  type        = list(any)
+}
+
+
+variable "Firewall_SL_Port" {
+  description = "Firewall Port"
+  type        = list(any)
+}
+
+variable "Mgmt_SL_Port" {
+  description = "Mgmt Port"
+  type        = list(any)
+}
+
+variable "Monitor_SL_Port" {
+  description = "Monitor Port"
+  type        = list(any)
+}
+
+
+variable "LB_SL_Port" {
+  description = "LB Port"
+  type        = list(any)
 }
 

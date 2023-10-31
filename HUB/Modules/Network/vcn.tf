@@ -1,6 +1,4 @@
 
-
-
 ### HUB VCN Code ######
 
 resource "oci_core_vcn" "vcn" {

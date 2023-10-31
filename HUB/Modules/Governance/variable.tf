@@ -22,3 +22,23 @@ variable "description" {
    type        = string
 }
 
+
+
+
+
+
+
+
+###### Group Variable ######
+
+variable "group_list" {
+  type = set(string)
+  }
+
+
+
+######  User Variable #####
+
+variable "user_list" {
+   type = set(string)
+  }

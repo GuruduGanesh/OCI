@@ -1,0 +1,21 @@
+resource "oci_core_security_list" "Firewall_SL" {
+#Required
+compartment_id = var.compartment_id
+vcn_id = oci_core_vcn.test_vcn.id
+  dynamic  "ingress_security_rules" {
+       for_each = var.security
+        content { 
+        protocol = security.value["protocol"]
+        source = security.value["source"]
+        source_type = security.value["source_type"]
+         tcp_options {
+            source_port_range {
+                #Required
+                max = var.security.value["port"]
+                min = var.security.value["port"]
+            }
+        }
+      }
+    }
+}
+
