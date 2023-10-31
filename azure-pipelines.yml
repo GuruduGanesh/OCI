@@ -3,17 +3,25 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
+trigger: none
+#- main
 
-pool:
-  vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+  - stage: oci terraform
+    jobs:
+      - job: validate
+        continueOnError: false
+        steps:
+        - task: TerraformInstaller@1
+          displayName: Install Terraform
+          inputs:
+            terraformVersion: 'latest'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+        - script: |
+            echo Execute Terraform script.
+          displayName: 'Runing Terraform script'
+
+        - script: |
+            ./Initialize-Terraform.ps1 -Workspace $(TFWorkspace) -Application $(TFApplication) -Type $(TFType)
+          displayName: "Initializing Terraform for $(TFWorkspace)"
